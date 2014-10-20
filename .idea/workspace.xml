@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f660ecf-455a-4593-8f69-2f4a1dc196f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/connect.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homework/get.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
     </list>
     <ignored path="edapphack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,19 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".htaccess" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="11" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.08389262" vertical-offset="0" max-vertical-offset="894">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="get.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homework/get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.25862068" vertical-offset="0" max-vertical-offset="870">
+            <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="345">
               <folding>
                 <marker date="1413848777000" expanded="true" signature="64:86" placeholder="SELECT * FRO..homework..." />
               </folding>
@@ -82,9 +79,9 @@
         <option value="$PROJECT_DIR$/dbconnect.php" />
         <option value="$PROJECT_DIR$/connect.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/api.php" />
         <option value="$PROJECT_DIR$/homework/get.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -260,19 +257,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="11" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="0.25862068" vertical-offset="0" max-vertical-offset="870">
+        <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="345">
           <folding>
             <marker date="1413848777000" expanded="true" signature="64:86" placeholder="SELECT * FRO..homework..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.08389262" vertical-offset="0" max-vertical-offset="894">
+          <folding />
         </state>
       </provider>
     </entry>
