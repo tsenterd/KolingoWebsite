@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f660ecf-455a-4593-8f69-2f4a1dc196f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/get.php" afterPath="$PROJECT_DIR$/homework/get.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="edapphack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,21 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".htaccess" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.08389262" vertical-offset="0" max-vertical-offset="894">
+            <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="get.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="345">
+            <state line="14" column="1" selection-start="322" selection-end="322" vertical-scroll-proportion="0.2413793" vertical-offset="0" max-vertical-offset="870">
               <folding>
-                <marker date="1413848777000" expanded="true" signature="64:86" placeholder="SELECT * FRO..homework..." />
+                <marker date="1413849347000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
               </folding>
             </state>
           </provider>
@@ -80,8 +81,8 @@
         <option value="$PROJECT_DIR$/connect.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/api.php" />
-        <option value="$PROJECT_DIR$/homework/get.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/homework/get.php" />
       </list>
     </option>
   </component>
@@ -257,19 +258,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/get.php">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="345">
-          <folding>
-            <marker date="1413848777000" expanded="true" signature="64:86" placeholder="SELECT * FRO..homework..." />
-          </folding>
+        <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
+    <entry file="file://$PROJECT_DIR$/homework/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="12" selection-start="195" selection-end="195" vertical-scroll-proportion="0.08389262" vertical-offset="0" max-vertical-offset="894">
-          <folding />
+        <state line="14" column="1" selection-start="322" selection-end="322" vertical-scroll-proportion="0.2413793" vertical-offset="0" max-vertical-offset="870">
+          <folding>
+            <marker date="1413849347000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
+          </folding>
         </state>
       </provider>
     </entry>
