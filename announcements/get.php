@@ -16,7 +16,7 @@ while ($announcement = mysqli_fetch_assoc($query)) {
     $announcements_list[] = array('announcement' => $announcement);
 }
 
-$output = json_encode(array('announcements' => $announcements_list));
+$output = json_encode(array('announcements' => $announcements_list), JSON_PRETTY_PRINT);
 
 echo $output;
 

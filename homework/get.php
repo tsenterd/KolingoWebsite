@@ -16,7 +16,7 @@ while ($homework = mysqli_fetch_assoc($query)) {
     $homework_list[] = array('homework' => $homework);
 }
 
-$output = json_encode(array('homework_list' => $homework_list));
+$output = json_encode(array('homework_list' => $homework_list), JSON_PRETTY_PRINT);
 
 echo $output;
 
