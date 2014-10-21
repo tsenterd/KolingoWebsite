@@ -11,10 +11,10 @@ $query = mysqli_query($conn, 'SELECT * FROM homework');
 $homework_list = array();
 
 while ($homework = mysqli_fetch_assoc($query)) {
-    $homework_list[] = array('post' => $homework);
+    $homework_list[] = array('homework' => $homework);
 }
 
-$output = json_encode(array('homework' => $homework_list));
+$output = json_encode(array('homework_list' => $homework_list));
 
 echo $output;
 
