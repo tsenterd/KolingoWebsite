@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f660ecf-455a-4593-8f69-2f4a1dc196f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/get.php" afterPath="$PROJECT_DIR$/homework/get.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="edapphack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,9 +46,9 @@
       <file leaf-file-name="get.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="1" selection-start="322" selection-end="322" vertical-scroll-proportion="0.2413793" vertical-offset="0" max-vertical-offset="870">
+            <state line="15" column="0" selection-start="308" selection-end="308" vertical-scroll-proportion="0.25862068" vertical-offset="0" max-vertical-offset="870">
               <folding>
-                <marker date="1413849347000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
+                <marker date="1413849589000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
               </folding>
             </state>
           </provider>
@@ -267,9 +266,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homework/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="322" selection-end="322" vertical-scroll-proportion="0.2413793" vertical-offset="0" max-vertical-offset="870">
+        <state line="15" column="0" selection-start="308" selection-end="308" vertical-scroll-proportion="0.25862068" vertical-offset="0" max-vertical-offset="870">
           <folding>
-            <marker date="1413849347000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
+            <marker date="1413849589000" expanded="true" signature="152:174" placeholder="SELECT * FRO..homework..." />
           </folding>
         </state>
       </provider>

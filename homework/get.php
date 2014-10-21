@@ -10,7 +10,7 @@ $query = mysqli_query($conn, 'SELECT * FROM homework');
 
 $homework_list = array();
 
-while ($homework = mysqli_fetch_array($query, 'MYSQL_ASSOC')) {
+while ($homework = mysqli_fetch_assoc($query)) {
     $homework_list[] = array('post' => $homework);
 }
 
