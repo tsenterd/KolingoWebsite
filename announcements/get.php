@@ -6,6 +6,8 @@ error_reporting(-1);
 
 include "../connect.php";
 
+header('Content-Type: application/json');
+
 $query = mysqli_query($conn, 'SELECT * FROM announcements');
 
 $announcements_list = array();
