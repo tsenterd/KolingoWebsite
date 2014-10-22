@@ -8,7 +8,7 @@
 
 
 <body>
-
+<div id ="wrapper">
 <div id="sidebar">
 
     <div id="account">
@@ -34,11 +34,13 @@
         while ($class = mysqli_fetch_array($query)) {
             echo '
 
+                <a href=?class_id='.$class["class_id"].'>
                     <div class = "sidebar-class">
                         <span class="sidebar-class-name">
-                            <a href=?class_id='.$class["class_id"].'>'.$class["class_name"].'</a>
+                        <p>'.$class["class_name"].'<p>
                         </span>
                     </div>
+                </a>
 
             ';
         }
@@ -76,7 +78,7 @@
 
     </div>
 </div>
-
+</div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="scripts/main.js"></script>
