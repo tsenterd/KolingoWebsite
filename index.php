@@ -31,7 +31,12 @@
 
         $query = mysqli_query($conn, 'SELECT class_id, class_name FROM classes');
 
+        $class_id_list = array();
+
         while ($class = mysqli_fetch_array($query)) {
+
+            $class_id_list[] = $class["class_id"];
+
             echo '
 
                 <a href=?class_id='.$class["class_id"].'>
@@ -45,34 +50,46 @@
             ';
         }
 
-        ?>
+        echo '</div>
 
-    </div>
+            </div>
+            <div id = "main-panel">
 
-</div>
-
-<div id = "main-panel">
-
-    <?php
-
-    include "connect.php";
+            <div id = "title-container">';
 
 
-    if (isset($_GET["class_id"])) {
+        $class_name = "";
+
+        if (isset($_GET["class_id"])) {
 
             $class_id = $_GET["class_id"];
 
             $query = mysqli_query($conn, 'SELECT class_name FROM classes WHERE class_id = '.$class_id);
 
             while ($class = mysqli_fetch_array($query)) {
-                echo $class[0];
+                $class_name = $class[0];
             }
+        } else {
+            $query = mysqli_query($conn, 'SELECT class_name FROM classes WHERE class_id = '.$class_id_list[0]);
+
+            while ($class = mysqli_fetch_array($query)) {
+                $class_name = $class[0];
+            }
+
         }
 
+        echo '<div id="class-title">
+
+             <span class = "title">   '.$class_name.' </span> </div>';
     ?>
+    </div>
 
-    <div id = "top-nav">
-
+    <div id = "top-nav-container">
+        <ul id="top-nav">
+            <li id="active"><a href="">Homework</a></li>
+            <li><a href="">Announcements</a></li>
+            <li><a href="">Marks</a></li>
+        </ul>
     </div>
     <div id = "main-content">
 

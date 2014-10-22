@@ -87,7 +87,42 @@ a {
 
 #main-panel {
     display: block;
-    width: 100%;
+    width: 950px;
     height: 100%;
     background-color: #ecf0f1;
+    float: right;
+}
+
+#class-title {
+    display: block;
+    width: auto;
+    height: 30px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.title {
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+#top-nav-container {
+    display: block;
+    width: auto;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #cccccc;
+    margin-top: 10px;
+}
+
+#top-nav li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 50px;
+}
+
+#top-nav li a {
+    color: black;
 }
