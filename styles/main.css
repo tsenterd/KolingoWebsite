@@ -110,7 +110,6 @@ a {
 #top-nav-container {
     display: block;
     width: auto;
-    overflow: hidden;
     text-align: center;
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #cccccc;
@@ -125,4 +124,9 @@ a {
 
 #top-nav li a {
     color: black;
+    padding-bottom: 15px;
+}
+
+.active {
+    border-bottom: 2px solid #2980b9;
 }

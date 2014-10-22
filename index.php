@@ -76,19 +76,36 @@
                 $class_name = $class[0];
             }
 
+            $class_id = $class_id_list[0];
+
         }
 
         echo '<div id="class-title">
 
              <span class = "title">   '.$class_name.' </span> </div>';
-    ?>
-    </div>
+        echo '</div>
 
     <div id = "top-nav-container">
-        <ul id="top-nav">
-            <li id="active"><a href="">Homework</a></li>
-            <li><a href="">Announcements</a></li>
-            <li><a href="">Marks</a></li>
+        <ul id="top-nav">';
+
+            $tabs = array("Homework", "Announcements", "Marks");
+
+            if (isset($_GET["tab"])) {
+                for ($i = 0; $i < count($tabs); $i++) {
+                    if ($_GET["tab"] == $i) {
+                        echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'" class="active">'.$tabs[$i].'</a></li>';
+                    } else {
+                        echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'">'.$tabs[$i].'</a></li>';
+                    }
+                }
+            } else {
+                echo '<li><a href="?class_id='.$class_id.'&tab=0" class="active">'.$tabs[0].'</a></li>';
+                echo '<li><a href="?class_id='.$class_id.'&tab=1">'.$tabs[1].'</a></li>';
+                echo '<li><a href="?class_id='.$class_id.'&tab=2">'.$tabs[2].'</a></li>';
+            }
+
+        ?>
+
         </ul>
     </div>
     <div id = "main-content">
