@@ -3,6 +3,7 @@
     <title>EdAppHack Demo</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="//cdn.rawgit.com/noelboss/featherlight/master/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -112,17 +113,19 @@
             </div>
         <div id = "main-content">';
 
+        if ($active_tab == 0) {
 
-        echo '
+
+            echo '
 
             <div id="new-homework-button-container">
-                <button class="new-homework-button">+ Homework</button>
+                <a href="#" data-featherlight="#create-homework"><button class="new-homework-button">+ Homework</button></a>
             </div>
+
+            <div class="lightbox" id="create-homework">Hey!</div>
 
         ';
 
-
-        if ($active_tab == 0) {
             $query = mysqli_query($conn, 'SELECT * FROM homework WHERE class_id = '.$class_id);
 
             while ($homework = mysqli_fetch_array($query)) {
@@ -155,6 +158,7 @@
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/master/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="scripts/main.js"></script>
 </body>
 

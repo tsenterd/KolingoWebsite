@@ -181,3 +181,7 @@ a {
 .new-homework-button:hover {
     background-color: #2ecc71;
 }
+
+.lightbox {
+    display: none;
+}
