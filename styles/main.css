@@ -130,3 +130,54 @@ a {
 .active {
     border-bottom: 2px solid #2980b9;
 }
+
+#main-content {
+    display: block;
+    width: 850px;
+    height: auto;
+    margin: 20px auto 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#homework-element {
+    display: block;
+    text-align: left;
+    min-height: 20px;
+    padding: 20px 0 20px 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.homework-title {
+    font-weight: normal;
+}
+
+.homework-text {
+
+}
+
+.date-assigned {
+    float: right;
+    text-align: right;
+}
+
+#new-homework-button-container {
+    padding-left: 10px;
+}
+
+.new-homework-button {
+    display: block;
+    padding: 15px 40px;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: #27ae60 none;
+}
+
+.new-homework-button:hover {
+    background-color: #2ecc71;
+}

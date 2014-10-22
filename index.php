@@ -90,10 +90,13 @@
 
             $tabs = array("Homework", "Announcements", "Marks");
 
+            $active_tab = 0;
+
             if (isset($_GET["tab"])) {
                 for ($i = 0; $i < count($tabs); $i++) {
                     if ($_GET["tab"] == $i) {
                         echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'" class="active">'.$tabs[$i].'</a></li>';
+                        $active_tab = $i;
                     } else {
                         echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'">'.$tabs[$i].'</a></li>';
                     }
@@ -104,13 +107,50 @@
                 echo '<li><a href="?class_id='.$class_id.'&tab=2">'.$tabs[2].'</a></li>';
             }
 
-        ?>
+        echo '
+                </ul>
+            </div>
+        <div id = "main-content">';
 
-        </ul>
-    </div>
-    <div id = "main-content">
 
-    </div>
+        echo '
+
+            <div id="new-homework-button-container">
+                <button class="new-homework-button">+ Homework</button>
+            </div>
+
+        ';
+
+
+        if ($active_tab == 0) {
+            $query = mysqli_query($conn, 'SELECT * FROM homework WHERE class_id = '.$class_id);
+
+            while ($homework = mysqli_fetch_array($query)) {
+
+                $date = date("F j Y, g:i a", strtotime($homework["created"]));
+
+                echo '
+
+
+
+                <div id="homework-element">
+                    <span class="homework-title">'.$homework["homework_title"].'</span>
+                    <span class="date-assigned">'.$date.'</span></br>
+                    <span class="homework-text">'.$homework["homework_data"].'</span>
+                </div>
+
+
+
+                ';
+            }
+
+
+        }
+
+
+
+        echo '</div>';
+    ?>
 </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
