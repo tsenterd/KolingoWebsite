@@ -115,14 +115,11 @@
 
         if ($active_tab == 0) {
 
-
             echo '
 
             <div id="new-homework-button-container">
                 <a href="#" data-featherlight="#create-homework"><button class="new-homework-button">+ Homework</button></a>
             </div>
-
-            <div class="lightbox" id="create-homework">Hey!</div>
 
         ';
 
@@ -153,7 +150,42 @@
 
 
         echo '</div>';
-    ?>
+
+        if (isset($_POST["title"]))  {
+
+            if (isset($_GET["class_id"])) {
+                $class_id = $_GET["class_id"];
+            } else {
+                $query = mysqli_query($conn, 'SELECT class_name FROM classes WHERE class_id = '.$class_id_list[0]);
+
+                while ($class = mysqli_fetch_array($query)) {
+                    $class_name = $class[0];
+                }
+
+                $class_id = $class_id_list[0];
+
+            }
+
+
+            $title = $_POST["title"];
+            $details = $_POST["details"];
+
+            $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+
+        }
+
+        ?>
+        <div class="lightbox" id="create-homework">
+
+
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id?>;">
+                <label>Title</label> <input type="text" name="title">
+                <label>Details</label>
+                <textarea rows="10" cols="100" name="details"></textarea>
+                <input type="submit" class="submit-button" name="submit" value="Submit">
+            </form>
+
+        </div>
 </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
