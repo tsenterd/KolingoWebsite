@@ -178,7 +178,7 @@
         <div class="lightbox" id="create-homework">
 
 
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id?>;">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id?>">
                 <label>Title</label> <input type="text" name="title">
                 <label>Details</label>
                 <textarea rows="10" cols="100" name="details"></textarea>
