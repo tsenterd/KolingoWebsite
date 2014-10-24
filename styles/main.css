@@ -92,6 +92,7 @@ a {
     background-color: #ecf0f1;
     float: right;
     overflow: auto;
+    box-shadow: -5px 0 5px -5px #333;
 }
 
 #class-title {
@@ -134,7 +135,7 @@ a {
 
 #main-content {
     display: block;
-    width: 850px;
+    width: 870px;
     height: auto;
     margin: 20px auto 0 auto;
     font-family: 'Roboto', sans-serif;
@@ -142,12 +143,40 @@ a {
     overflow: scroll;
 }
 
-#homework-element {
+#list-element {
     display: block;
     text-align: left;
     min-height: 20px;
-    padding: 20px 0 20px 10px;
+    padding: 20px 0 20px 0;
+}
+
+#list-element .options {
+    display: block;
+    width: 20px;
+    float: left;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+#list-element:hover .options {
+    visibility: visible;
+}
+
+.delete {
+    padding-top: 3px;
+}
+
+.edit {
+    padding-top: 5px;
+}
+
+.list-element-data {
+    display: block;
+    float: left;
+    width: 810px;
+    overflow: hidden;
     border-bottom: 1px solid #cccccc;
+    padding: 0 10px 10px 0;
 }
 
 .homework-title {
@@ -165,15 +194,15 @@ a {
 }
 
 #new-homework-button-container {
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
-#create-homework form {
+#create form {
     width: 600px;
     padding: 10px 0px;
 }
 
-#create-homework form label {
+#create form label {
     position: relative;
     display: block;
     height: 40px;
@@ -190,7 +219,7 @@ a {
     top: 20px;
 }
 
-#create-homework form input, textarea {
+#create form input, textarea {
     border: 1px solid #ddd;
     padding: 10px;
     text-shadow: 0 1px 1px rgba(255,255,255,0.8);
@@ -210,16 +239,16 @@ a {
     font-weight: 300;
 }
 
-#create-homework form textarea {
+#create form textarea {
     resize: none;
 }
 
-#create-homework form:before, #create-homework form:after {
+#create form:before, #create form:after {
     content: "";
     display: table;
 }
 
-#create-homework form:after {
+#create form:after {
     clear: both;
 }
 

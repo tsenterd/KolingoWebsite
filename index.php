@@ -133,10 +133,16 @@
 
 
 
-                <div id="homework-element">
-                    <span class="homework-title">'.$homework["homework_title"].'</span>
-                    <span class="date-assigned">'.$date.'</span></br>
-                    <span class="homework-text">'.$homework["homework_data"].'</span>
+                <div id="list-element">
+                    <div class="options">
+                        <img src="resources/images/pencil-2x.png" class="edit">
+                        <img src="resources/images/delete-2x.png" class="delete">
+                    </div>
+                    <div class="list-element-data">
+                        <span class="homework-title">'.$homework["homework_title"].'</span>
+                        <span class="date-assigned">'.$date.'</span></br>
+                        <span class="homework-text">'.$homework["homework_data"].'</span>
+                    </div>
                 </div>
 
 
@@ -152,7 +158,7 @@
             echo '
 
             <div id="new-homework-button-container">
-                <a href="#" data-featherlight="#create-homework"><button class="new-homework-button">+ Announcement</button></a>
+                <a href="#" data-featherlight="#create"><button class="new-homework-button">+ Announcement</button></a>
             </div>
 
         ';
@@ -167,10 +173,16 @@
 
 
 
-                <div id="homework-element">
-                    <span class="homework-title">'.$announcement["announcement_title"].'</span>
-                    <span class="date-assigned">'.$date.'</span></br>
-                    <span class="homework-text">'.$announcement["announcement_data"].'</span>
+                <div id="list-element">
+                    <div class="options">
+                        <img src="resources/images/pencil-2x.png" class="edit">
+                        <img src="resources/images/delete-2x.png" class="delete">
+                    </div>
+                    <div class="list-element-data">
+                        <span class="homework-title">'.$announcement["announcement_title"].'</span>
+                        <span class="date-assigned">'.$date.'</span></br>
+                        <span class="homework-text">'.$announcement["announcement_data"].'</span>
+                    </div>
                 </div>
 
 
@@ -214,7 +226,7 @@
             }
 
         ?>
-        <div class="lightbox" id="create-homework">
+        <div class="lightbox" id="create">
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab?>">
                 <label>Title</label> <input type="text" name="title">
