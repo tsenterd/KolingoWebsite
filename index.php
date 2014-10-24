@@ -202,15 +202,21 @@
             $title = $_POST["title"];
             $details = $_POST["details"];
 
-            $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
 
-        }
+            if ($active_tab == 0) {
+                $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+            } else if ($active_tab == 1) {
+                $query = mysqli_query($conn, 'INSERT INTO announcements (class_id, announcement_data, announcement_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+            } else if ($active_tab == 2){
+                $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+            }
+
+            }
 
         ?>
         <div class="lightbox" id="create-homework">
 
-
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id?>">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab?>">
                 <label>Title</label> <input type="text" name="title">
                 <label>Details</label>
                 <textarea rows="10" cols="100" name="details"></textarea>
