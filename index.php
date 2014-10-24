@@ -89,7 +89,7 @@
     <div id = "top-nav-container">
         <ul id="top-nav">';
 
-            $tabs = array("Homework", "Announcements", "Marks");
+            $tabs = array("Homework", "Announcements", "Documents");
 
             $active_tab = 0;
 
@@ -147,6 +147,38 @@
 
         }
 
+
+        if ($active_tab == 1) {
+            echo '
+
+            <div id="new-homework-button-container">
+                <a href="#" data-featherlight="#create-homework"><button class="new-homework-button">+ Announcement</button></a>
+            </div>
+
+        ';
+
+            $query = mysqli_query($conn, 'SELECT * FROM announcements WHERE class_id = '.$class_id);
+
+            while ($announcement = mysqli_fetch_array($query)) {
+
+                $date = date("F j Y, g:i a", strtotime($announcement["created"]));
+
+                echo '
+
+
+
+                <div id="homework-element">
+                    <span class="homework-title">'.$announcement["announcement_title"].'</span>
+                    <span class="date-assigned">'.$date.'</span></br>
+                    <span class="homework-text">'.$announcement["announcement_data"].'</span>
+                </div>
+
+
+
+                ';
+            }
+
+        }
 
 
         echo '</div>';
