@@ -118,7 +118,7 @@
             echo '
 
             <div id="new-homework-button-container">
-                <a href="#" data-featherlight="#create-homework"><button class="new-homework-button">+ Homework</button></a>
+                <a href="#" data-featherlight="#create"><button class="new-homework-button">+ Homework</button></a>
             </div>
 
         ';
