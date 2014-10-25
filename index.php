@@ -192,6 +192,43 @@
 
         }
 
+        if ($active_tab == 2) {
+            echo '
+
+            <div id="new-homework-button-container">
+                <a href="#" data-featherlight="#create"><button class="new-homework-button">+ Document</button></a>
+            </div>
+
+        ';
+
+            $query = mysqli_query($conn, 'SELECT * FROM documents WHERE class_id = '.$class_id.' order by created desc');
+
+            while ($document = mysqli_fetch_array($query)) {
+
+                $date = date("F j Y, g:i a", strtotime($document["created"]));
+
+                echo '
+
+
+
+                <div id="list-element">
+                    <div class="options">
+                        <a href="#" data-featherlight="#edit"><img src="resources/images/pencil-2x.png" class="edit"></a>
+                        <a href="#" data-featherlight="#delete"><img src="resources/images/delete-2x.png" class="delete"></a>
+                    </div>
+                    <div class="list-element-data">
+                        <span class="homework-title">'.$document["title"].'</span>
+                        <span class="date-assigned">'.$date.'</span></br>
+                        <span class="homework-text">'.$document["link"].'</span>
+                    </div>
+                </div>
+
+
+
+                ';
+            }
+        }
+
 
         echo '</div>';
 
@@ -221,7 +258,7 @@
             } else if ($active_tab == 1) {
                 $query = mysqli_query($conn, 'INSERT INTO announcements (class_id, announcement_data, announcement_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
             } else if ($active_tab == 2){
-                $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+                $query = mysqli_query($conn, 'INSERT INTO documents (class_id, link, title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
             }
 
         }
@@ -231,8 +268,18 @@
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab.'&action=create'?>">
                 <label>Title</label> <input type="text" name="title">
-                <label>Details</label>
-                <textarea rows="10" cols="100" name="details"></textarea>
+                <?php
+                    if ($active_tab == 2) {
+                    echo '
+                        <label>Link</label>
+                        <input type="text" name="details">';
+                    } else {
+
+                    echo '
+                        <label>Details</label>
+                        <textarea rows="10" cols="100" name="details"></textarea>';
+                    }
+                ?>
                 <input type="submit" class="submit-button" name="submit" value="Submit">
             </form>
 
