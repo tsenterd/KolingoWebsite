@@ -8,7 +8,12 @@ include "../../connect.php";
 
 header('Content-Type: application/json');
 
-$query = mysqli_query($conn, 'SELECT * FROM homework');
+if (isset($_GET["class_id"])) {
+    $class_id = $_GET["class_id"];
+    $query = mysqli_query($conn, 'SELECT * FROM homework where class_id = '.$class_id);
+} else {
+    $query = mysqli_query($conn, 'SELECT * FROM homework');
+}
 
 $homework_list = array();
 
