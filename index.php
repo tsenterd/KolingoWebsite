@@ -135,8 +135,8 @@
 
                 <div id="list-element">
                     <div class="options">
-                        <img src="resources/images/pencil-2x.png" class="edit">
-                        <img src="resources/images/delete-2x.png" class="delete">
+                        <a href="#" data-featherlight="#edit"><img src="resources/images/pencil-2x.png" class="edit"></a>
+                        <a href="#" data-featherlight="#delete"><img src="resources/images/delete-2x.png" class="delete"></a>
                     </div>
                     <div class="list-element-data">
                         <span class="homework-title">'.$homework["homework_title"].'</span>
@@ -175,8 +175,8 @@
 
                 <div id="list-element">
                     <div class="options">
-                        <img src="resources/images/pencil-2x.png" class="edit">
-                        <img src="resources/images/delete-2x.png" class="delete">
+                        <a href="#" data-featherlight="#edit"><img src="resources/images/pencil-2x.png" class="edit"></a>
+                        <a href="#" data-featherlight="#delete"><img src="resources/images/delete-2x.png" class="delete"></a>
                     </div>
                     <div class="list-element-data">
                         <span class="homework-title">'.$announcement["announcement_title"].'</span>
@@ -197,6 +197,7 @@
 
         if (isset($_POST["title"]))  {
 
+            if (isset($_GET["action"]) && $_GET["action"] == "create")
             if (isset($_GET["class_id"])) {
                 $class_id = $_GET["class_id"];
             } else {
@@ -223,10 +224,32 @@
                 $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
             }
 
-            }
+        }
 
         ?>
         <div class="lightbox" id="create">
+
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab.'&action=create'?>">
+                <label>Title</label> <input type="text" name="title">
+                <label>Details</label>
+                <textarea rows="10" cols="100" name="details"></textarea>
+                <input type="submit" class="submit-button" name="submit" value="Submit">
+            </form>
+
+        </div>
+
+        <div class="lightbox" id="edit">
+
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab?>">
+                <label>Title</label> <input type="text" name="title">
+                <label>Details</label>
+                <textarea rows="10" cols="100" name="details"></textarea>
+                <input type="submit" class="submit-button" name="submit" value="Submit">
+            </form>
+
+        </div>
+
+        <div class="lightbox" id="delete">
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab?>">
                 <label>Title</label> <input type="text" name="title">

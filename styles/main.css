@@ -170,6 +170,10 @@ a {
     padding-top: 5px;
 }
 
+.delete, .edit:hover {
+    cursor: pointer;
+}
+
 .list-element-data {
     display: block;
     float: left;
@@ -194,6 +198,8 @@ a {
 }
 
 #new-homework-button-container {
+    display: inline-block;
+    width: inherit;
     padding-left: 20px;
 }
 
@@ -251,6 +257,118 @@ a {
 #create form:after {
     clear: both;
 }
+
+
+#edit form {
+    width: 600px;
+    padding: 10px 0px;
+}
+
+#edit form label {
+    position: relative;
+    display: block;
+    height: 40px;
+    float: left;
+    padding-right: 3%;
+    width: 30%;
+    min-width: 80px;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: right;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+    top: 20px;
+}
+
+#edit form input, textarea {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    color: #666;
+    width: 64%;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f7f7f7 7%, #f7f7f7 22%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#f7f7f7), color-stop(22%,#f7f7f7), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.7), 1px 1px 2px rgba(0,0,0,0.1) inset;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#edit form textarea {
+    resize: none;
+}
+
+#edit form:before, #create form:after {
+    content: "";
+    display: table;
+}
+
+#edit form:after {
+    clear: both;
+}
+
+#delete form {
+    width: 600px;
+    padding: 10px 0px;
+}
+
+#delete form label {
+    position: relative;
+    display: block;
+    height: 40px;
+    float: left;
+    padding-right: 3%;
+    width: 30%;
+    min-width: 80px;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: right;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+    top: 20px;
+}
+
+#delete form input, textarea {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    color: #666;
+    width: 64%;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f7f7f7 7%, #f7f7f7 22%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#f7f7f7), color-stop(22%,#f7f7f7), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    background: linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.7), 1px 1px 2px rgba(0,0,0,0.1) inset;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#delete form textarea {
+    resize: none;
+}
+
+#delete form:before, #create form:after {
+    content: "";
+    display: table;
+}
+
+#delete form:after {
+    clear: both;
+}
+
 
 input:focus,
 select:focus,
