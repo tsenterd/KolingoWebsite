@@ -123,7 +123,7 @@
 
         ';
 
-            $query = mysqli_query($conn, 'SELECT * FROM homework WHERE class_id = '.$class_id);
+            $query = mysqli_query($conn, 'SELECT * FROM homework WHERE class_id = '.$class_id.' order by created desc');
 
             while ($homework = mysqli_fetch_array($query)) {
 
@@ -163,7 +163,7 @@
 
         ';
 
-            $query = mysqli_query($conn, 'SELECT * FROM announcements WHERE class_id = '.$class_id);
+            $query = mysqli_query($conn, 'SELECT * FROM announcements WHERE class_id = '.$class_id.' order by created desc');
 
             while ($announcement = mysqli_fetch_array($query)) {
 
