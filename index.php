@@ -38,7 +38,7 @@
         if (isset($_GET["class"])) {
             $menu_id = $_GET["class"];
         } else {
-            $menu_id = null;
+            $menu_id = 1;
         }
 
         while ($class = mysqli_fetch_array($query)) {
