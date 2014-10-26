@@ -80,6 +80,10 @@ a {
     background-color: #2980b9;
 }
 
+.active-class {
+    background-color: #2980b9;
+}
+
 .sidebar-class-name p {
     line-height: 50px;
     text-transform: uppercase;
@@ -187,8 +191,8 @@ a {
     font-weight: normal;
 }
 
-.homework-text {
-
+.homework-text a {
+    color: #2980b9 ;
 }
 
 .date-assigned {

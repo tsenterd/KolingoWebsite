@@ -34,21 +34,42 @@
 
         $class_id_list = array();
 
+
+        if (isset($_GET["class"])) {
+            $menu_id = $_GET["class"];
+        } else {
+            $menu_id = null;
+        }
+
         while ($class = mysqli_fetch_array($query)) {
 
             $class_id_list[] = $class["class_id"];
 
-            echo '
+            if ($class["class_id"] == $menu_id) {
+                echo '
 
-                <a href=?class_id='.$class["class_id"].'>
-                    <div class = "sidebar-class">
+                <a href=?class_id='.$class["class_id"].'&class='.$class["class_id"].'>
+                    <div class = "sidebar-class active-class">
                         <span class="sidebar-class-name">
                         <p>'.$class["class_name"].'<p>
                         </span>
                     </div>
                 </a>
 
-            ';
+                ';
+            } else {
+                echo '
+
+                    <a href=?class_id='.$class["class_id"].'&class='.$class["class_id"].'>
+                        <div class = "sidebar-class">
+                            <span class="sidebar-class-name">
+                            <p>'.$class["class_name"].'<p>
+                            </span>
+                        </div>
+                    </a>
+
+                ';
+            }
         }
 
         echo '</div>
@@ -96,16 +117,16 @@
             if (isset($_GET["tab"])) {
                 for ($i = 0; $i < count($tabs); $i++) {
                     if ($_GET["tab"] == $i) {
-                        echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'" class="active">'.$tabs[$i].'</a></li>';
+                        echo '<li><a href="?class_id='.$class_id.'&class='.$class_id.'&tab='.$i.'" class="active">'.$tabs[$i].'</a></li>';
                         $active_tab = $i;
                     } else {
-                        echo '<li><a href="?class_id='.$class_id.'&tab='.$i.'">'.$tabs[$i].'</a></li>';
+                        echo '<li><a href="?class_id='.$class_id.'&class='.$class_id.'&tab='.$i.'">'.$tabs[$i].'</a></li>';
                     }
                 }
             } else {
-                echo '<li><a href="?class_id='.$class_id.'&tab=0" class="active">'.$tabs[0].'</a></li>';
-                echo '<li><a href="?class_id='.$class_id.'&tab=1">'.$tabs[1].'</a></li>';
-                echo '<li><a href="?class_id='.$class_id.'&tab=2">'.$tabs[2].'</a></li>';
+                echo '<li><a href="?class_id='.$class_id.'&class='.$class_id.'&tab=0" class="active">'.$tabs[0].'</a></li>';
+                echo '<li><a href="?class_id='.$class_id.'&class='.$class_id.'&tab=1">'.$tabs[1].'</a></li>';
+                echo '<li><a href="?class_id='.$class_id.'&class='.$class_id.'&tab=2">'.$tabs[2].'</a></li>';
             }
 
         echo '
@@ -207,6 +228,8 @@
 
                 $date = date("F j Y, g:i a", strtotime($document["created"]));
 
+                $link = filter_var($document["link"], FILTER_SANITIZE_URL);
+
                 echo '
 
 
@@ -219,7 +242,7 @@
                     <div class="list-element-data">
                         <span class="homework-title">'.$document["title"].'</span>
                         <span class="date-assigned">'.$date.'</span></br>
-                        <span class="homework-text">'.$document["link"].'</span>
+                        <span class="homework-text"><a href="'.$link.'">'.$link.'</a></span>
                     </div>
                 </div>
 
@@ -272,7 +295,7 @@
                     if ($active_tab == 2) {
                     echo '
                         <label>Link</label>
-                        <input type="text" name="details">';
+                        <input type="url" name="details">';
                     } else {
 
                     echo '
