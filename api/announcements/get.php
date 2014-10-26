@@ -8,7 +8,21 @@ include "../../connect.php";
 
 header('Content-Type: application/json');
 
-$query = mysqli_query($conn, 'SELECT * FROM announcements');
+if (isset($_GET["class_id"])) {
+    $class_id = $_GET["class_id"];
+    $query = mysqli_query($conn, 'SELECT * FROM announcements where class_id = '.$class_id);
+    if (isset($_GET["after"])) {
+        $date = urldecode($_GET["after"]);
+        $query = mysqli_query($conn, 'SELECT * FROM announcements where class_id = '.$class_id.' and created > "'.$date.'"');
+    }
+} else {
+    if (isset($_GET["after"])) {
+        $date = urldecode($_GET["after"]);
+        $query = mysqli_query($conn, 'SELECT * FROM announcements where created > "'.$date.'"');
+    }
+    $query = mysqli_query($conn, 'SELECT * FROM announcements');
+}
+
 
 $announcements_list = array();
 
