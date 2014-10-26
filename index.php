@@ -30,6 +30,51 @@
 
         include "connect.php";
 
+        ob_start();
+
+        function humanTiming ($original)
+        {
+            $chunks = array(
+                array(60 * 60 * 24 * 365 , 'year'),
+                array(60 * 60 * 24 * 30 , 'month'),
+                array(60 * 60 * 24 * 7, 'week'),
+                array(60 * 60 * 24 , 'day'),
+                array(60 * 60 , 'hour'),
+                array(60 , 'min'),
+                array(1 , 'sec'),
+            );
+
+            $today = time(); /* Current unix time  */
+            $since = $today - $original;
+
+            // $j saves performing the count function each time around the loop
+            for ($i = 0, $j = count($chunks); $i < $j; $i++) {
+
+                $seconds = $chunks[$i][0];
+                $name = $chunks[$i][1];
+
+                // finding the biggest chunk (if the chunk fits, break)
+                if (($count = floor($since / $seconds)) != 0) {
+                    break;
+                }
+            }
+
+            $print = ($count == 1) ? '1 '.$name : "$count {$name}s";
+
+            if ($i + 1 < $j) {
+                // now getting the second item
+                $seconds2 = $chunks[$i + 1][0];
+                $name2 = $chunks[$i + 1][1];
+
+                // add second item if its greater than 0
+                if (($count2 = floor(($since - ($seconds * $count)) / $seconds2)) != 0) {
+                    $print .= ($count2 == 1) ? ', 1 '.$name2 : " $count2 {$name2}s";
+                }
+            }
+            return $print;
+        }
+
+
         $query = mysqli_query($conn, 'SELECT class_id, class_name FROM classes');
 
         $class_id_list = array();
@@ -153,7 +198,6 @@
                 echo '
 
 
-
                 <div id="list-element">
                     <div class="options">
                         <a href="#" data-featherlight="#edit"><img src="resources/images/pencil-2x.png" class="edit"></a>
@@ -275,13 +319,17 @@
             $title = $_POST["title"];
             $details = $_POST["details"];
 
+            $current_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
             if ($active_tab == 0) {
                 $query = mysqli_query($conn, 'INSERT INTO homework (class_id, homework_data, homework_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+                header("Location: ".$current_link);
             } else if ($active_tab == 1) {
                 $query = mysqli_query($conn, 'INSERT INTO announcements (class_id, announcement_data, announcement_title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+                header("Location: ".$current_link);
             } else if ($active_tab == 2){
                 $query = mysqli_query($conn, 'INSERT INTO documents (class_id, link, title, created) VALUES ("'.$class_id.'", "'.$details.'", "'.$title.'", NOW())');
+                header("Location: ".$current_link);
             }
 
         }
@@ -290,17 +338,33 @@
         <div class="lightbox" id="create">
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF'].'?class_id='.$class_id.'&tab='.$active_tab.'&action=create'?>">
-                <label>Title</label> <input type="text" name="title">
                 <?php
                     if ($active_tab == 2) {
                     echo '
+                        <h1>Add Document</h1>
+                        <label>Title</label>
+                        <input type="text" name="title">
                         <label>Link</label>
-                        <input type="url" name="details">';
-                    } else {
+                        <input type="url" name="details">
+                    ';
+                    } else if ($active_tab == 0) {
+                        echo '
 
-                    echo '
+                        <h1>Add Homework</h1>
+                        <label>Title</label>
+                        <input type="text" name="title">
                         <label>Details</label>
-                        <textarea rows="10" cols="100" name="details"></textarea>';
+                        <textarea rows="10" cols="100" name="details"></textarea>
+
+                        ';
+                    } else {
+                        echo '
+                        <h1>Add Announcement</h1>
+                        <label>Title</label>
+                        <input type="text" name="title">
+                        <label>Details</label>
+                        <textarea rows="10" cols="100" name="details"></textarea>
+                        ';
                     }
                 ?>
                 <input type="submit" class="submit-button" name="submit" value="Submit">
