@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>EdAppHack Demo</title>
+    <title>Kolingo Online Web Portal</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link href="//cdn.rawgit.com/noelboss/featherlight/master/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
