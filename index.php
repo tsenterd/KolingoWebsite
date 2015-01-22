@@ -15,10 +15,10 @@
     <div id="account">
         <a href="#">
             <span class="avatar">
-                <img src="https://gravatar.com/avatar/5936a3fb444dbb59f32ef0d2c8027196?s=96&d=https://dashboard.heroku.com%2Fninja-avatar-48x48.png%3Fssl%3D1" />
+                <img src="https://avatars0.githubusercontent.com/u/4388226?v=3&s=400"  width="48" height="48"/>
             </span>
             <span class="sidebar-user-name">
-                <p>Jonathan Galperin</p>
+                <p>David Tsenter</p>
             </span>
         </a>
     </div>
